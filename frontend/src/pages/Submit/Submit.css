@@ -1,0 +1,82 @@
+.form {
+  margin-top: 140px;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-image: url(https://luttje.github.io/css-pokemon-gameboy/styles/images/frame-hd.png)
+    42 round;
+  border-width: 15px;
+  border-style: solid;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+
+  animation-duration: 0.7s;
+  animation-name: animate-fade;
+  animation-delay: 0.2s;
+  animation-fill-mode: backwards;
+}
+
+/* Style form elements */
+.form input,
+.form textarea,
+.form button {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.submit-text,
+.label-text {
+  line-height: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-submit {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  display: block;
+  margin: 0 auto;
+  text-align-last: center;
+  text-align: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  padding: 9px;
+  border: 1px solid rgb(10, 7, 7);
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 20px;
+  border: 1px solid rgb(10, 7, 7);
+  border-radius: 5px;
+  background-color: #e2e2e2;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #ee1a1a;
+  color: white;
+}

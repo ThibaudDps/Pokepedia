@@ -1,0 +1,13 @@
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+#index {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #a52b2b;
+  font-family: "Pokemon GB";
+}
