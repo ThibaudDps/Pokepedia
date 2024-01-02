@@ -32,7 +32,7 @@ function Submit() {
   return (
     <div>
       <div className="submit">
-        <form className="form" onSubmit={postPokemon}>
+        <form className="submit-form" onSubmit={postPokemon}>
           <p className="submit-text">
             Have you discover <br />a new pokemon?
             <br />
@@ -97,7 +97,9 @@ function Submit() {
               <option value="Fairy">Fairy</option>
             </select>
           </label>
-          <button type="submit">Send your request</button>
+          <button className="submit-button" type="submit">
+            Send your request
+          </button>
         </form>
       </div>
     </div>

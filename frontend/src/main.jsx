@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import connexion from "./services/connexion";
+import { AuthProvider } from "./contexts/Auth";
 
 import App from "./App";
 import Home from "./pages/Home/Home";
@@ -15,8 +16,8 @@ import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Administration/Login";
 import Administration from "./pages/Administration/Administration";
 import Dashboard from "./pages/Administration/Dashboard";
+import Management from "./pages/Administration/Management";
 import AdminCard from "./pages/Administration/AdminCard";
-import { AuthProvider } from "./contexts/Auth";
 
 const router = createBrowserRouter([
   {
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Dashboard />,
+      },
+      {
+        path: "management",
+        element: <Management />,
       },
       {
         path: "admincard",

@@ -9,8 +9,10 @@ function App() {
   return (
     <>
       <NavBar />
-      <Outlet />
-      <Footer />
+      <div className="flex-container">
+        <Outlet />
+        <Footer />
+      </div>
     </>
   );
 }

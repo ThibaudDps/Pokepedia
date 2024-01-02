@@ -1,0 +1,42 @@
+.contain-form {
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.mngmt-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 350px;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 30px;
+  border: 1px solid #feba1c;
+  border-radius: 10px;
+}
+
+.contain-submit {
+  text-align: center;
+  margin-left: -30px;
+}
+
+.mngmt-forminput {
+  width: 200px;
+  margin-left: 10px;
+}
+
+.table-pkmn-management table {
+  margin: 0 auto;
+}
+
+.table-pkmn-management table,
+.table-pkmn-management th {
+  border: 1px solid transparent;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.table-pkmn-management img {
+  width: 40px;
+}
