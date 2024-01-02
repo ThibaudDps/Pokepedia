@@ -1,0 +1,39 @@
+.contain-management {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: center;
+  height: 100%;
+  justify-items: center;
+}
+
+.pkmn-management {
+  margin-top: 9em;
+  border-image: url(https://luttje.github.io/css-pokemon-gameboy/styles/images/frame-hd.png)
+    42 round;
+  border-width: 15px;
+  border-style: solid;
+  width: 20em;
+  padding: 1rem;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+@media screen and (min-width: 480px) {
+  .pkmn-management {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pkmn-management {
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pkmn-management {
+    width: 800px;
+  }
+}

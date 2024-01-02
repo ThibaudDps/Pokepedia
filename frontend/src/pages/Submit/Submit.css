@@ -1,4 +1,4 @@
-.form {
+.submit-form {
   margin-top: 140px;
   width: 80%;
   max-width: 400px;
@@ -20,9 +20,9 @@
 }
 
 /* Style form elements */
-.form input,
-.form textarea,
-.form button {
+.submit-form input,
+.submit-form textarea,
+.submit-form button {
   text-align: center;
   width: 100%;
   margin-bottom: 10px;
@@ -68,7 +68,7 @@ textarea {
   border-radius: 5px;
 }
 
-button {
+.submit-button {
   margin-top: 20px;
   border: 1px solid rgb(10, 7, 7);
   border-radius: 5px;
@@ -76,7 +76,7 @@ button {
   transition-duration: 0.4s;
 }
 
-button:hover {
+.submit-button:hover {
   background-color: #ee1a1a;
   color: white;
 }

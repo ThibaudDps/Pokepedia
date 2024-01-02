@@ -38,7 +38,7 @@ function Login() {
   return (
     <div>
       <div className="submit">
-        <form className="form" onSubmit={handleRequest}>
+        <form className="submit-form" onSubmit={handleRequest}>
           <p className="submit-text">Log in to your account</p>
           <label>
             <p className="label-text">Mail </p>

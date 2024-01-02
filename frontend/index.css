@@ -2,12 +2,8 @@
   display: none;
 }
 
-#index {
-  height: 100%;
-}
 body {
-  height: 100%;
-  margin: 0;
+  margin: 0 auto;
   background-color: #a52b2b;
   font-family: "Pokemon GB";
 }
