@@ -52,7 +52,7 @@ function PokemonManagement() {
   const putPokemon = async (event) => {
     event.preventDefault();
     try {
-      await connexion.put(`/pokemon/${pokemonValue.id}`, pokemonValue);
+      await connexion.put(`/pokemons/${pokemonValue.id}`, pokemonValue);
       showToastMessage();
       getPokemon();
       setFormVisible("none");
@@ -160,7 +160,7 @@ function PokemonManagement() {
                       onClick={() => deletePokemon(pokemon.id)}
                       className="button-delete"
                     >
-                      Delete
+                      -
                     </button>
                   </td>
                   <td>
@@ -169,7 +169,7 @@ function PokemonManagement() {
                       onClick={() => loadPokemon(pokemon)}
                       className="button-put"
                     >
-                      Put
+                      +
                     </button>
                   </td>
                 </tr>

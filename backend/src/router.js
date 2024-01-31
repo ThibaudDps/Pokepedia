@@ -3,6 +3,9 @@ const express = require("express");
 const router = express.Router();
 const pkmnControllers = require("./controllers/pkmnControllers");
 const typeControllers = require("./controllers/typeControllers");
+const authControllers = require("./controllers/authControllers");
+
+const SignUpValidation = require("./middlewares/SignUpValidation");
 
 /* Pokemon routes */
 router.get("/pokemons", pkmnControllers.browse);
@@ -32,5 +35,12 @@ router.post("/login", (req, res) => {
     res.sendStatus(404);
   }
 });
+
+// Route to get an id auth
+router.get("/auth", authControllers.read);
+// Route to post a new auth
+router.post("/signup", SignUpValidation, authControllers.add);
+// Route to post a new auth
+router.post("/login", authControllers.log);
 
 module.exports = router;

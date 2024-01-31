@@ -1,0 +1,69 @@
+.pkmn {
+  width: 90px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.widget {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.widget-pkmn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 150px;
+}
+
+.widget-pkmn-ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-desc-home {
+  border-image: url(https://luttje.github.io/css-pokemon-gameboy/styles/images/frame-hd.png)
+    42 round;
+  border-width: 15px;
+  border-style: solid;
+  width: 11em;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.widget-desc-imgtype {
+  width: 70px;
+  margin: 30px 0 20px;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 700px) {
+  .widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .widget-pkmn {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TABLETTE */
+
+@media screen and (min-width: 700px) {
+  .widget-pkmn-ticket {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+  }
+}

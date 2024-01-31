@@ -9,7 +9,7 @@
   justify-content: space-between;
 }
 
-.scroll-button {
+button {
   width: 100px;
   margin-top: 20px;
   border: 1px solid rgb(10, 7, 7);
@@ -18,7 +18,7 @@
   transition-duration: 0.4s;
 }
 
-.scroll-button:hover {
+button:hover {
   background-color: #ee1a1a;
   color: white;
 }

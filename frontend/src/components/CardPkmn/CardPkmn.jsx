@@ -12,8 +12,24 @@ function CardPkmn({ pokemon }) {
           <Link to={`/pokemons/${pokemon.id}`}>
             <img className="card-img" src={pokemon.image} alt={pokemon.name} />
           </Link>
-          <figcaption className="card-text">{pokemon.name}</figcaption>
-          <img className="card-icon" src={pokemon.icon} alt={pokemon.icon} />
+          <div className="card-desc-all">
+            <div className="card-info">
+              <p className="card-name">{pokemon.name}</p>
+              <p className="card-id">n°{pokemon.id}</p>
+            </div>
+            <div className="card-types">
+              <img
+                className="card-icon"
+                src={pokemon.icon}
+                alt={pokemon.icon}
+              />
+              <img
+                className="card-icon"
+                src={pokemon.icon2}
+                alt={pokemon.icon2}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -26,6 +42,7 @@ CardPkmn.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
+    icon2: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -12,7 +12,7 @@ class pokemonManager extends AbstractManager {
   async create(pokemon) {
     // Execute the SQL INSERT query to add a new pokemon to the "pokemon" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name, description, image, type) values (?,?,?,?)`,
+      `insert into ${this.table} (name, description, image, type_id) values (?,?,?,?)`,
       [pokemon.name, pokemon.description, pokemon.image, pokemon.type_id]
     );
 
@@ -20,27 +20,34 @@ class pokemonManager extends AbstractManager {
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
   async read(id) {
-    // Execute the SQL SELECT query to retrieve a specific pokemon by its ID
+    // Execute the SQL SELECT query to retrieve a specific Pokémon by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} inner join pktype on pktype.id = ${this.table}.type_id where ${this.table}.id = ?`,
+      `SELECT pokemon.*, pktype.type AS type, pktype.icon AS icon, pktype2.type AS type2, pktype2.icon AS icon2
+       FROM pokemon
+       INNER JOIN pktype ON pktype.id = pokemon.type_id
+       LEFT JOIN pktype AS pktype2 ON pktype2.id = pokemon.type_id_2
+       WHERE pokemon.id = ?`,
       [id]
     );
-
-    // Return the first row of the result, which represents the pokemon
-    return rows[0];
+    return rows[0]; // Assuming only one Pokémon is fetched
   }
 
   async readAll(query) {
     const value = [];
-    let url = `select * from ${this.table}`;
+    let url = `SELECT ${this.table}.id, ${this.table}.type_id, ${this.table}.type_id_2, ${this.table}.image, ${this.table}.name, ${this.table}.description, 
+               pktype.id AS pktype_id, pktype.type AS type, pktype.icon AS icon,
+               pktype2.id AS pktype_id_2, pktype2.type AS type2, pktype2.icon AS icon2
+               FROM ${this.table}
+               INNER JOIN pktype ON pktype.id = ${this.table}.type_id
+               LEFT JOIN pktype AS pktype2 ON pktype2.id = ${this.table}.type_id_2`;
 
     if (query.type) {
-      url += " where type_id = ?";
+      url += ` where ${this.table}.type_id = ?`;
       value.push(query.type);
     }
+    url += ` ORDER BY pokemon.id ASC`;
+
     // Execute the SQL SELECT query to retrieve all pokemons from the "pokemon" table
     const [rows] = await this.database.query(url, value);
 

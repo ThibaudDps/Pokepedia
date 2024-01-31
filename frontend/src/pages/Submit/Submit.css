@@ -43,6 +43,20 @@
   align-items: center;
 }
 
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
 .select-submit {
   width: 100%;
   padding: 9px;

@@ -23,7 +23,6 @@
   animation-duration: 0.7s;
   animation-name: animate-fade;
   animation-delay: 0.2s;
-  animation-fill-mode: backwards;
 }
 
 .about-body {
@@ -47,18 +46,6 @@
   border-right: 0.15em solid rgba(14, 14, 14, 0);
   white-space: nowrap;
   margin: 0 auto;
-  animation:
-    typing 4.5s steps(40, end),
-    blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
 }
 
 .p-about {
