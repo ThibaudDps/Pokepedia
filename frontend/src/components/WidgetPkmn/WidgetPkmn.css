@@ -6,7 +6,7 @@
 }
 
 .widget {
-  margin-top: 100px;
+  margin: 250px 0 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;

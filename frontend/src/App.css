@@ -12,10 +12,14 @@
 button {
   width: 100px;
   margin-top: 20px;
-  border: 1px solid rgb(10, 7, 7);
+  border: 2px solid rgb(10, 7, 7);
   border-radius: 5px;
   background-color: #e2e2e2;
   transition-duration: 0.4s;
+  animation-duration: 0.7s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
 }
 
 button:hover {
@@ -24,7 +28,7 @@ button:hover {
 }
 
 .home-logo {
-  height: 40vmin;
+  height: 45vmin;
   pointer-events: none;
 }
 

@@ -15,9 +15,12 @@
 }
 
 .select-type {
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   border: none;
   margin-bottom: 70px;
+  font-size: 12px;
+  padding: 5px;
+  font-family: "Pokemon GB";
 }
 
 @media (max-width: 847px) {
