@@ -32,7 +32,7 @@ router.post("/login", (req, res) => {
   if (user.mail === req.body.mail && user.hash === req.body.password) {
     res.status(200).json({ msg: "connected" });
   } else {
-    res.sendStatus(404);
+    res.status(401).json({ error: "Unauthorized" });
   }
 });
 

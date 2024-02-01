@@ -29,7 +29,7 @@ function WidgetPkmn({ pokemon }) {
                   alt={randomPokemon.name}
                 />
               </Link>
-              <p>{randomPokemon.name}</p>
+              <p className="widget-text">{randomPokemon.name}</p>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ function WidgetPkmn({ pokemon }) {
                 src={randomPktype.icon}
                 alt={randomPktype.type_id}
               />
-              <p>{randomPktype.type}</p>
+              <p className="widget-text">{randomPktype.type}</p>
             </div>
           </div>
         </div>

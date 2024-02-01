@@ -25,7 +25,7 @@ function AuthProvider({ children }) {
 }
 
 AuthProvider.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default AuthProvider;

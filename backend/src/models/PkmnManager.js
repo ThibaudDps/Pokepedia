@@ -12,8 +12,14 @@ class pokemonManager extends AbstractManager {
   async create(pokemon) {
     // Execute the SQL INSERT query to add a new pokemon to the "pokemon" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name, description, image, type_id) values (?,?,?,?)`,
-      [pokemon.name, pokemon.description, pokemon.image, pokemon.type_id]
+      `insert into ${this.table} (name, description, image, type_id, type_id_2) values (?,?,?,?,?)`,
+      [
+        pokemon.name,
+        pokemon.description,
+        pokemon.image,
+        pokemon.type_id,
+        pokemon.type_id_2,
+      ]
     );
 
     // Return the ID of the newly inserted pokemon
@@ -59,8 +65,15 @@ class pokemonManager extends AbstractManager {
   async update(id, putPkmn) {
     // Execute the SQL SELECT query to retrieve a specific pkmns by its ID
     const [result] = await this.database.query(
-      `UPDATE ${this.table} set name = ?, description = ?, image = ?, type_id = ? WHERE id = ?`,
-      [putPkmn.name, putPkmn.description, putPkmn.image, putPkmn.type_id, id]
+      `UPDATE ${this.table} set name = ?, description = ?, image = ?, type_id = ?, type_id_2 = ? WHERE id = ?`,
+      [
+        putPkmn.name,
+        putPkmn.description,
+        putPkmn.image,
+        putPkmn.type_id,
+        putPkmn.type_id_2,
+        id,
+      ]
     );
 
     // Return the first row of the result, which represents the item

@@ -197,4 +197,4 @@ INSERT INTO pokemon (name, description, image, type_id, type_id_2) VALUES
 ('Dragonair', 'The evolved form of Dratini, Dragonair is a dragon-type Pokemon with elegant and flowing serpentine movements.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/148.png', 15, null),
 ('Dragonite', 'The final evolution of Dratini, Dragonite is a powerful dragon/flying-type Pokemon known for its kind and helpful nature.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png', 15, 6),
 ('Mewtwo', 'A psychic-type Legendary Pokemon known for its incredible psychic powers. It is the result of genetic manipulation.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png', 10, null),
-('Mew', 'A psychic-type Mythical Pokemon said to contain the genetic code of every Pokemon. It is rarely seen.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png', 10, null);
+('???', 'A psychic-type Mythical Pokemon said to contain the genetic code of every Pokemon. It is rarely seen.', 'https://icones.pro/wp-content/uploads/2021/05/icone-point-d-interrogation-question-rouge.png', 10, null);
