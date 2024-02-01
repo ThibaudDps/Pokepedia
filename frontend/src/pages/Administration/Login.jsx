@@ -29,8 +29,7 @@ const showToastErrorMessage = () => {
 
 function Login() {
   const [credentials, setCredentials] = useState(user);
-  const { setConnected } = useContext(AuthContext);
-  const { infosUser, setInfosUser } = useContext(AuthContext);
+  const { setInfosUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleCredentials = (e) => {
@@ -44,10 +43,9 @@ function Login() {
     e.preventDefault();
     try {
       const valid = await connexion.post("/login", credentials);
-      setConnected(valid.data.connected);
-      setInfosUser(valid.data.user);
+      setInfosUser(valid.data);
       showToastMessage();
-      if (infosUser) {
+      if (valid.data.id) {
         setTimeout(() => {
           navigate("/");
         }, 3000);
@@ -68,9 +66,9 @@ function Login() {
         <form className="submit-form" onSubmit={handleRequest}>
           <p className="submit-text">Log in to your account</p>
           <label>
-            <p className="label-text">Mail </p>
+            <p className="label-text">Mail</p>
             <input
-              type="text"
+              type="email"
               name="mail"
               required
               onChange={handleCredentials}
@@ -78,7 +76,7 @@ function Login() {
             />
           </label>
           <label>
-            <p className="label-text">Password </p>
+            <p className="label-text">Password</p>
             <input
               type="password"
               name="password"

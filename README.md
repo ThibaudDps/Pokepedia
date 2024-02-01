@@ -1,7 +1,7 @@
 ![Pokepedia](https://www.pokepedia.fr/images/thumb/e/e2/Pok%C3%A9_Ball-RS.png/200px-Pok%C3%A9_Ball-RS.png)
 
 
-[Visitez mon Poképedia](https://thibauddps.github.io/Projet1_Work-it/)  
+
 
 
 ## Cadre du projet
@@ -25,7 +25,7 @@ Une fois la recherche effectuée, Poképedia présente aux utilisateurs le profi
 
 ## Planification et conception :
 
-Étude du design et des fonctionnalités clés que nous souhaitions offrir aux utilisateurs, comme la recherche de Pokémons, la soumission de critères de recherche, la présentation de profils.
+Étude du design et des fonctionnalités clés que je souhaite offrir aux utilisateurs, comme la recherche de Pokémons, la soumission de critères de recherche, la présentation de profils dans un style pixel et rétro.
 Création de wireframes du site pour visualiser son apparence et son organisation.
 Choix une palette de couleurs professionnelle et un design épuré qui reflètent la simplicité et l'efficacité que nous souhaitions offrir aux utilisateurs.
 
@@ -35,3 +35,12 @@ Choix de technologies de développement web appropriées en fonction de nos comp
 Création de cartes pour stocker les profils des Pokémons, y compris leurs informations personnelles, leurs compétences, leur expériences et leur localisations.
 Développement des fonctionnalités clés, notamment la soumission de critères de recherche et la présentation des résultats de manière pertinente.
 Optimisation pour une utilisation mobile.
+
+## Modelisation : 
+
+![image](https://github.com/ThibaudDps/Pokepedia/assets/124290694/037a4e25-83dd-4367-a30c-c3e7b7c7546d)
+
+
+## Backlog : 
+
+![image](https://github.com/ThibaudDps/Pokepedia/assets/124290694/88613be0-6d80-4aff-a5c4-6a18ee7ffabc)

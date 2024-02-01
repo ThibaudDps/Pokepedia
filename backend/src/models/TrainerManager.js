@@ -49,7 +49,7 @@ class TrainerManager extends AbstractManager {
   async readAll() {
     // Execute the SQL SELECT query to retrieve all trainers from the "trainer" table
     const [rows] = await client.query(
-      `select id, trainername, DATE_FORMAT(birthday, "%Y-%m-%d")birthday, picture, regime_id, auth_id from ${this.table}`
+      `select id, name, picture, auth_id from ${this.table}`
     );
 
     // Return the array of trainers

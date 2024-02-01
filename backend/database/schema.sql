@@ -1,3 +1,4 @@
+-- SQLBook: Code
 
 create table pktype (
   id int primary key auto_increment not null,
@@ -18,12 +19,29 @@ CREATE TABLE pokemon (
   FOREIGN KEY (type_id_2) REFERENCES pktype(id)
 );
 
+create table auth (
+  id int primary key auto_increment not null,
+  mail VARCHAR(255) not null UNIQUE,
+  password VARCHAR(255) not null,
+  is_admin BOOLEAN DEFAULT false
+);
+
 
 create table trainer (
   id int primary key auto_increment not null,
   name varchar(50) not null,
-  picture varchar(255) not null
+  picture varchar(255) not null,
+  auth_id int not null,
+  Foreign Key (auth_id) REFERENCES auth(id)
 );
+
+INSERT INTO auth (id, mail, password, is_admin) VALUES
+('1', 'admin@pkmn.com', 'pkmn', 1 ),
+('2', 'trainer@pkmn.com', 'pkmn', 0);
+
+INSERT INTO trainer (id, name, picture, auth_id) VALUES
+('1', 'Prof Oak', 'https://i.pinimg.com/originals/0b/83/2f/0b832f5e5c9a08ee6099e8f9782fa3eb.jpg', 1 ),
+('2', 'Red', 'https://www.nautiljon.com/images/jeuxvideo_persos/00/70/mini/red_4307.webp?11662320536', 2);
 
 INSERT INTO pktype (type, icon) VALUES
 ('Grass', 'http://www.rw-designer.com/icon-view/21171.png'),
@@ -127,8 +145,8 @@ INSERT INTO pokemon (name, description, image, type_id, type_id_2) VALUES
 ('Rapidash', 'The evolved form of Ponyta, Rapidash is a majestic fire-type Pokemon with incredible speed and agility.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/078.png', 2, null),
 ('Slowpoke', 'A water/psychic-type Pokemon known for its slow movements. It evolves into Slowbro.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/079.png', 3, 10),
 ('Slowbro', 'The evolved form of Slowpoke, Slowbro is a water/psychic-type Pokemon with a Shellder attached to its tail.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/080.png', 3, 10),
-('Magnemite', 'An electric/steel-type Pokemon with magnets on its sides. It evolves into Magneton.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/081.png', 17, 8),
-('Magneton', 'The evolved form of Magnemite, Magneton is a cluster of three Magnemite linked by strong magnetic forces.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/082.png', 17, 8),
+('Magnemite', 'An electric/steel-type Pokemon with magnets on its sides. It evolves into Magneton.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/081.png', 16, 8),
+('Magneton', 'The evolved form of Magnemite, Magneton is a cluster of three Magnemite linked by strong magnetic forces.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/082.png', 16, 8),
 ('Farfetch’d', 'A normal/flying-type Pokemon that carries a leek stalk as its weapon. It evolves into Sirfetch’d.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/083.png', 6, 5),
 ('Doduo', 'A normal/flying-type Pokemon with two heads. It evolves into Dodrio.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/084.png', 6, 5),
 ('Dodrio', 'The evolved form of Doduo, Dodrio is a three-headed normal/flying-type Pokemon known for its speed.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/085.png', 6, 5),

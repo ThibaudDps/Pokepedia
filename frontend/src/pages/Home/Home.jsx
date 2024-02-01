@@ -12,9 +12,11 @@ function Home() {
   return (
     <div className="home">
       <header className="home-header">
-        <p className="home-title">Pokepedia v.1</p>
+        <p className="home-title">Pokepedia</p>
+        <p className="catchphrase">Online Pokedex</p>
         <img src={logomon} className="home-logo" alt="logo" />
       </header>
+
       <WidgetPkmn pokemon={pokemon} />
     </div>
   );

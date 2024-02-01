@@ -6,44 +6,19 @@
 }
 
 button {
-  margin-top: 30px;
   width: 100px;
   border: 2px solid rgb(10, 7, 7);
   border-radius: 5px;
   background-color: #e2e2e2;
-  transition-duration: 0.4s;
-  animation-duration: 0.5s;
-  animation-name: animate-fade;
-  animation-delay: 0.5s;
-  animation-fill-mode: backwards;
 }
 
 button:hover {
-  background-color: #ee1a1a;
+  background-color: #a52b2b;
   color: white;
 }
 
 .home-title {
   font-size: 35px;
-  z-index: 100000;
-  margin: 100px 0 0px 0;
-}
-
-.home-logo {
-  z-index: 1;
-  width: 150px;
-  animation: App-logo-spin infinite 20s linear;
-  margin-top: -90px;
-  pointer-events: none;
-}
-
-.home-header {
-  margin-top: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: calc(10px + 2vmin);
   color: white;
   text-shadow:
     3px 0 #0000009a,
@@ -54,6 +29,33 @@ button:hover {
     -1px -1px #0000009a,
     3px -1px #0000009a,
     -1px 1px #0000009a;
+  z-index: 100000;
+  margin: 100px 0 0px 0;
+}
+
+.catchphrase {
+  margin-top: 10px;
+  border: 2px solid;
+  z-index: 2;
+  background-color: #fdfdfd;
+
+  padding: 5px;
+}
+
+.home-logo {
+  z-index: 1;
+  width: 150px;
+  animation: App-logo-spin infinite 20s linear;
+  margin-top: -130px;
+  pointer-events: none;
+}
+
+.home-header {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
   animation-duration: 0.7s;
   animation-name: animate-fade;

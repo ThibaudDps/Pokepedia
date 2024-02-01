@@ -3,98 +3,57 @@ const client = require("../../database/client");
 
 class AuthManager extends AbstractManager {
   constructor() {
-    // Call the constructor of the parent class (AbstractManager)
-    // and pass the table name "trainer" as configuration
     super({ table: "auth" });
   }
 
-  // The C of CRUD - Create operation
-
   async create(auth) {
-    // Execute the SQL INSERT query to add a new auth to the "auth" table
     const [result] = await client.query(
-      `insert into ${this.table} (mail, password) values (?, ?)`,
+      `INSERT INTO ${this.table} (mail, password) VALUES (?, ?)`,
       [auth.mail, auth.password]
     );
-    // Return the ID of the newly inserted trainer
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
   async read() {
-    // Execute the SQL SELECT query to retrieve a specific trainer by its ID
-    const [rows] = await this.database.query(
-      `SELECT  id FROM ${this.table} WHERE id = (
-        SELECT MAX( id )  AS idMax FROM ${this.table} )`
+    const [rows] = await client.query(
+      `SELECT id FROM ${this.table} WHERE id = (SELECT MAX(id) AS idMax FROM ${this.table})`
     );
-
-    // Return the first row of the result, which represents the trainer
     return rows[0];
   }
 
   async readByEmail(mail) {
-    // Execute the SQL SELECT query to retrieve a specific trainer by its ID
-    const [rows] = await this.database.query(
+    const [rows] = await client.query(
       `SELECT * FROM ${this.table} WHERE mail = ?`,
       [mail]
     );
-
-    // Return the first row of the result, which represents the trainer
     return rows[0];
   }
 
-  async readtrainer(authId) {
-    // Execute the SQL SELECT query to retrieve a specific trainer by its ID
-    const [rows] = await this.database.query(
-      `SELECT trainer.id, trainer.name, trainer.picture, trainer.auth_id`,
-      [authId]
-    );
-
-    // Return the first row of the result, which represents the trainer
-    return rows[0];
-  }
-
-  /*
-  async readAll() {
-    // Execute the SQL SELECT query to retrieve all trainers from the "trainer" table
-    const [rows] = await client.query(
-      `select id, trainername, DATE_FORMAT(birthday, "%Y-%m-%d")birthday, picture, regime_id, auth_id from ${this.table}`
-    );
-
-    // Return the array of trainers
-    return rows;
-  }
-*/
-  /*
-  // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing item
-
-  async update(id, trainer) {
-    // Execute the SQL SELECT query to retrieve a specific trainer by its ID
+  async readTrainer(id) {
     const [result] = await client.query(
-      `UPDATE ${this.table} set ? WHERE id = ?`,
-      [trainer, id]
-    );
-
-    // Return the first row of the result, which represents the item
-    return result;
-  }
-*/
-  /*
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove a trainer by its ID
-
-  async delete(id) {
-    const result = await client.query(
-      `DELETE FROM ${this.table} WHERE id = ?`,
+      `SELECT auth.id, auth.mail, auth.is_admin, trainer.name, trainer.picture
+       FROM ${this.table}
+       INNER JOIN trainer ON ${this.table}.id = trainer.auth_id
+       WHERE ${this.table}.id = ?`,
       [id]
     );
+    return result[0];
+  }
 
-    // Return the first row of the result, which represents the trainer
+  async readAll() {
+    const [rows] = await client.query(
+      `SELECT id, name, picture, auth_id FROM ${this.table}`
+    );
+    return rows;
+  }
+
+  async update(id, trainer) {
+    const [result] = await client.query(
+      `UPDATE ${this.table} SET ? WHERE id = ?`,
+      [trainer, id]
+    );
     return result;
   }
-  */
 }
 
 module.exports = AuthManager;

@@ -4,6 +4,7 @@ const router = express.Router();
 const pkmnControllers = require("./controllers/pkmnControllers");
 const typeControllers = require("./controllers/typeControllers");
 const authControllers = require("./controllers/authControllers");
+const TrainerControllers = require("./controllers/TrainerControllers");
 
 const SignUpValidation = require("./middlewares/SignUpValidation");
 
@@ -23,21 +24,10 @@ router.delete("/types/:id", typeControllers.destroy);
 
 /* Users routes */
 
-router.post("/login", (req, res) => {
-  const user = {
-    mail: "admin@pkmn.com",
-    hash: "pkmn",
-  };
-
-  if (user.mail === req.body.mail && user.hash === req.body.password) {
-    res.status(200).json({ msg: "connected" });
-  } else {
-    res.status(401).json({ error: "Unauthorized" });
-  }
-});
-
 // Route to get an id auth
 router.get("/auth", authControllers.read);
+// Route to get an id trainer
+router.get("/trainer", TrainerControllers.read);
 // Route to post a new auth
 router.post("/signup", SignUpValidation, authControllers.add);
 // Route to post a new auth
