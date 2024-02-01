@@ -30,7 +30,6 @@ class TrainerManager extends AbstractManager {
     // Return the first row of the result, which represents the trainer
     return rows[0];
   }
-
   // The Rs of CRUD - Read operations
 
   /*
@@ -49,7 +48,7 @@ class TrainerManager extends AbstractManager {
   async readAll() {
     // Execute the SQL SELECT query to retrieve all trainers from the "trainer" table
     const [rows] = await client.query(
-      `select id, trainername, DATE_FORMAT(birthday, "%Y-%m-%d")birthday, picture, regime_id, auth_id from ${this.table}`
+      `select id, name, picture, auth_id from ${this.table}`
     );
 
     // Return the array of trainers

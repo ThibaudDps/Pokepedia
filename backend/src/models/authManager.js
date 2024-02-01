@@ -45,9 +45,9 @@ class AuthManager extends AbstractManager {
   }
 
   async readtrainer(authId) {
-    // Execute the SQL SELECT query to retrieve a specific trainer by its ID
+    // Execute the SQL SELECT query to retrieve a specific trainer by its authentication ID
     const [rows] = await this.database.query(
-      `SELECT trainer.id, trainer.name, trainer.picture, trainer.auth_id`,
+      `SELECT * FROM trainer WHERE auth_id = ?`,
       [authId]
     );
 
@@ -55,18 +55,16 @@ class AuthManager extends AbstractManager {
     return rows[0];
   }
 
-  /*
   async readAll() {
     // Execute the SQL SELECT query to retrieve all trainers from the "trainer" table
     const [rows] = await client.query(
-      `select id, trainername, DATE_FORMAT(birthday, "%Y-%m-%d")birthday, picture, regime_id, auth_id from ${this.table}`
+      `select id, name, picture, auth_id from ${this.table}`
     );
 
     // Return the array of trainers
     return rows;
   }
-*/
-  /*
+
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing item
 
@@ -80,7 +78,7 @@ class AuthManager extends AbstractManager {
     // Return the first row of the result, which represents the item
     return result;
   }
-*/
+
   /*
   // The D of CRUD - Delete operation
   // TODO: Implement the delete operation to remove a trainer by its ID

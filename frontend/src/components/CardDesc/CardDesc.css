@@ -22,6 +22,7 @@
   animation-name: animate-fade;
   animation-delay: 0.3s;
   animation-fill-mode: backwards;
+  margin-bottom: 30px;
 }
 
 .types {
@@ -43,7 +44,7 @@
     justify-content: center;
   }
   .card-desc {
-    margin-top: 9em;
+    margin: 9em 0 30px;
     border-image: url(https://luttje.github.io/css-pokemon-gameboy/styles/images/frame-hd.png)
       42 round;
     border-width: 15px;
@@ -78,6 +79,10 @@
 
   .card-desc-imgtype {
     width: 30px;
+  }
+
+  .navigation-buttons {
+    margin-top: 20px;
   }
 
   .p-desc {

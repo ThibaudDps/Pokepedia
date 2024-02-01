@@ -7,22 +7,23 @@ import Footer from "../../components/Footer/Footer";
 function Administration() {
   const { connected } = useContext(AuthContext);
 
-  if (connected !== "connected") {
-    return <Navigate to="/" replace />;
-  }
-  return (
-    <>
-      <div className="nav">
-        <nav className="nav-menu">
-          <Link to="/">Home</Link>
-          <Link to="/administration/management">Management</Link>
-        </nav>
-      </div>
-      <Outlet />
+  if (connected.is_admin === 1) {
+    return (
+      <>
+        <div className="nav">
+          <nav className="nav-menu">
+            <Link to="/">Home</Link>
+            <Link to="/administration/management">Management</Link>
+          </nav>
+        </div>
+        <Outlet />
 
-      <Footer />
-    </>
-  );
+        <Footer />
+      </>
+    );
+  }
+
+  return <Navigate to="/" replace />;
 }
 
 export default Administration;

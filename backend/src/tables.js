@@ -5,10 +5,14 @@
 // Import the manager modules responsible for handling data operations on the tables
 const PkmnManager = require("./models/PkmnManager");
 const TypeManager = require("./models/TypeManager");
+const AuthManager = require("./models/authManager");
+const TrainerManager = require("./models/TrainerManager");
 
 const managers = [
   PkmnManager,
   TypeManager,
+  AuthManager,
+  TrainerManager,
   // Add other managers here
 ];
 

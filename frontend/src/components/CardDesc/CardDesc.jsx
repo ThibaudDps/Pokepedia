@@ -56,11 +56,19 @@ function CardDesc({ pokemon }) {
           </div>
         </div>
       </div>
-      <div className="navigation-buttons">
-        <button type="button" onClick={goToPreviousPokemon}>
+      <div>
+        <button
+          className="navigation-buttons"
+          type="button"
+          onClick={goToPreviousPokemon}
+        >
           Previous
         </button>
-        <button type="button" onClick={goToNextPokemon}>
+        <button
+          className="navigation-buttons"
+          type="button"
+          onClick={goToNextPokemon}
+        >
           Next
         </button>
       </div>

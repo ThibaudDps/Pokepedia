@@ -64,22 +64,3 @@
   flex-direction: column;
   align-items: center;
 }
-
-@media (max-width: 847px) {
-  .card {
-    width: 130px;
-    height: 130px;
-  }
-
-  .card-img {
-    width: 110px;
-  }
-
-  .card-text {
-    display: none;
-  }
-
-  .card-icon {
-    width: 20px;
-  }
-}

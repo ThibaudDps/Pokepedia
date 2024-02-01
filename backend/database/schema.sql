@@ -1,3 +1,4 @@
+-- SQLBook: Code
 
 create table pktype (
   id int primary key auto_increment not null,
@@ -18,12 +19,29 @@ CREATE TABLE pokemon (
   FOREIGN KEY (type_id_2) REFERENCES pktype(id)
 );
 
+create table auth (
+  id int primary key auto_increment not null,
+  mail VARCHAR(255) not null UNIQUE,
+  password VARCHAR(255) not null,
+  is_admin BOOLEAN DEFAULT false
+);
+
 
 create table trainer (
   id int primary key auto_increment not null,
   name varchar(50) not null,
-  picture varchar(255) not null
+  picture varchar(255) not null,
+  auth_id int not null,
+  Foreign Key (auth_id) REFERENCES auth(id)
 );
+
+INSERT INTO auth (id, mail, password, is_admin) VALUES
+('1', 'admin@pkmn.com', 'pkmn', 1 ),
+('2', 'trainer@pkmn.com', 'pkmn', 0);
+
+INSERT INTO trainer (id, name, picture, auth_id) VALUES
+('1', 'Prof Oak', 'https://i.pinimg.com/originals/0b/83/2f/0b832f5e5c9a08ee6099e8f9782fa3eb.jpg', 1 ),
+('2', 'Red', 'https://www.nautiljon.com/images/jeuxvideo_persos/00/70/mini/red_4307.webp?11662320536', 2);
 
 INSERT INTO pktype (type, icon) VALUES
 ('Grass', 'http://www.rw-designer.com/icon-view/21171.png'),
