@@ -30,6 +30,7 @@ class TrainerManager extends AbstractManager {
     // Return the first row of the result, which represents the trainer
     return rows[0];
   }
+
   // The Rs of CRUD - Read operations
 
   /*

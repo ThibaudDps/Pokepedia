@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/Auth";
 import favimon from "../../assets/favimon.svg";
+
 import "./Navbar.css";
 
 function NavBar() {
@@ -54,13 +55,13 @@ function NavBar() {
                   </button>
                 </li>
                 <li className="name-picture">
-                  <p className="name-user">{infosUser.trainer_name}</p>
+                  <p className="name-user">{infosUser.name}</p>
 
                   <NavLink to="/profile">
                     <img
-                      className="profile-logo logouser"
+                      className="profile-logo"
                       src={infosUser.picture}
-                      alt="user"
+                      alt=""
                     />
                   </NavLink>
                 </li>

@@ -1,20 +1,30 @@
 .nav {
+  background-color: #a52b2b;
   z-index: 2;
-  top: 0;
+  top: -2px;
   position: fixed;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-.nav-menu {
-  margin: 0;
-}
 
 .nav-login {
   display: flex;
+}
+
+.nav-menu {
+  margin-top: -5px;
+}
+
+.nav-logo {
+  margin: 20px 0 0 0;
+}
+
+.profile-logo {
+  display: none;
 }
 
 .button-logout {
