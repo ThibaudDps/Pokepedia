@@ -1,7 +1,7 @@
 ![Pokepedia](https://www.pokepedia.fr/images/thumb/e/e2/Pok%C3%A9_Ball-RS.png/200px-Pok%C3%A9_Ball-RS.png)
 
 
-[Visitez mon Poképedia](https://thibauddps.github.io/Projet1_Work-it/)  
+[Backlog](https://docs.google.com/spreadsheets/d/1I-8hW8QsJOk_CLsDjPqAQll25RndJxzNIP4lo7W4i8E/edit?pli=1#gid=2086870957)
 
 
 ## Cadre du projet
