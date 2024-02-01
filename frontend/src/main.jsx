@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import connexion from "./services/connexion";
-import { AuthProvider } from "./contexts/Auth";
+import AuthProvider from "./contexts/Auth";
 
 import App from "./App";
 import Home from "./pages/Home/Home";
@@ -14,10 +14,10 @@ import About from "./pages/About/About";
 import Submit from "./pages/Submit/Submit";
 import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Administration/Login";
+import SignUp from "./pages/Administration/SignUp";
 import Administration from "./pages/Administration/Administration";
 import Dashboard from "./pages/Administration/Dashboard";
 import Management from "./pages/Administration/Management";
-import AdminCard from "./pages/Administration/AdminCard";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: ({ request }) => {
+          const query = new URL(request.url).search;
+
+          return connexion
+            .get(`/pokemons${query}`)
+            .then((res) => res.data)
+            .catch((err) => console.error(err));
+        },
       },
       {
         path: "/pokemons",
@@ -76,27 +84,27 @@ const router = createBrowserRouter([
         path: "*",
         element: <NotFound />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
     ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
   {
     path: "/administration/",
     element: <Administration />,
     children: [
       {
-        path: "",
+        path: "/administration/",
         element: <Dashboard />,
       },
       {
         path: "management",
         element: <Management />,
-      },
-      {
-        path: "admincard",
-        element: <AdminCard />,
       },
     ],
   },

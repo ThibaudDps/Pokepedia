@@ -23,7 +23,7 @@ function AllPkmns() {
       </div>
 
       <button className="scroll-button" type="button" onClick={scrollToTop}>
-        Scroll to top
+        Top
       </button>
     </div>
   );

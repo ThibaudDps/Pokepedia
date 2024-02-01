@@ -3,6 +3,9 @@ const express = require("express");
 const router = express.Router();
 const pkmnControllers = require("./controllers/pkmnControllers");
 const typeControllers = require("./controllers/typeControllers");
+const authControllers = require("./controllers/authControllers");
+
+const SignUpValidation = require("./middlewares/SignUpValidation");
 
 /* Pokemon routes */
 router.get("/pokemons", pkmnControllers.browse);
@@ -29,8 +32,15 @@ router.post("/login", (req, res) => {
   if (user.mail === req.body.mail && user.hash === req.body.password) {
     res.status(200).json({ msg: "connected" });
   } else {
-    res.sendStatus(404);
+    res.status(401).json({ error: "Unauthorized" });
   }
 });
+
+// Route to get an id auth
+router.get("/auth", authControllers.read);
+// Route to post a new auth
+router.post("/signup", SignUpValidation, authControllers.add);
+// Route to post a new auth
+router.post("/login", authControllers.log);
 
 module.exports = router;

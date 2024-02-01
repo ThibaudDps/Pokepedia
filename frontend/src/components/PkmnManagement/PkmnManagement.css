@@ -40,3 +40,8 @@
 .table-pkmn-management img {
   width: 40px;
 }
+
+.button-put,
+.button-delete {
+  width: 30px;
+}

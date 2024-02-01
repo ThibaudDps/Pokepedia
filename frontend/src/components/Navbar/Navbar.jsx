@@ -14,6 +14,7 @@ function NavBar() {
         <NavLink to="/pokemons">Pokedex</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/submit">Submit</NavLink>
+        <NavLink to="/login">Login</NavLink>
       </nav>
     </div>
   );

@@ -13,7 +13,8 @@
   margin-top: 10px;
 }
 
-.nav-menu a {
+.nav-menu a,
+.nav-login a {
   margin: 10px;
   color: aliceblue;
   text-decoration: none;

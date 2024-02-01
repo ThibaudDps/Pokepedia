@@ -1,9 +1,20 @@
 .card-desc-typename {
   font-size: 12px;
 }
+
 .card-desc-name {
   font-size: 17px;
   font-weight: bold;
+}
+
+.card-desc-imgtype {
+  width: 40px;
+}
+
+.card-desc-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-desc {
@@ -11,6 +22,19 @@
   animation-name: animate-fade;
   animation-delay: 0.3s;
   animation-fill-mode: backwards;
+}
+
+.types {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.type1,
+.type2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 590px) {

@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import connexion from "../../services/connexion";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import "./Submit.css";
 
@@ -8,10 +11,37 @@ const pokemonEntry = {
   description: "",
   image: "",
   type: "",
+  type2: "",
+};
+
+const showToastMessage = () => {
+  toast.success("The entry has been saved successfully", {
+    position: toast.POSITION.TOP_RIGHT,
+  });
+};
+
+const showToastErrorMessage = () => {
+  toast.error("The entry was not saved !", {
+    position: toast.POSITION.TOP_RIGHT,
+  });
 };
 
 function Submit() {
   const [pokemon, setPokemon] = useState(pokemonEntry);
+  const [types, setTypes] = useState([]);
+
+  useEffect(() => {
+    const fetchTypes = async () => {
+      try {
+        const response = await connexion.get("/types");
+        setTypes(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchTypes();
+  }, []);
 
   const handlePokemon = (event) => {
     setPokemon((previousState) => ({
@@ -23,9 +53,19 @@ function Submit() {
   const postPokemon = async (event) => {
     event.preventDefault();
     try {
-      await connexion.post("/pokemons", pokemon);
+      const pokemonWithIds = {
+        ...pokemon,
+        type_id: pokemon.type,
+        type_id_2: pokemon.type2,
+      };
+      await connexion.post("/pokemons", pokemonWithIds);
+      showToastMessage();
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     } catch (error) {
-      console(error);
+      showToastErrorMessage(error);
     }
   };
 
@@ -34,10 +74,10 @@ function Submit() {
       <div className="submit">
         <form className="submit-form" onSubmit={postPokemon}>
           <p className="submit-text">
-            Have you discover <br />a new pokemon?
+            Have you discovered <br />a new pokemon?
             <br />
             <br />
-            Submit your datas here!
+            Submit your data here!
           </p>
           <label>
             <p className="label-text">Name </p>
@@ -50,7 +90,7 @@ function Submit() {
             />
           </label>
           <label>
-            <p className="label-text"> Description </p>
+            <p className="label-text">Description</p>
             <textarea
               name="description"
               required
@@ -59,7 +99,7 @@ function Submit() {
             />
           </label>
           <label>
-            <p className="label-text"> Image Url </p>
+            <p className="label-text">Image Url </p>
             <input
               type="url"
               name="image"
@@ -69,7 +109,7 @@ function Submit() {
             />
           </label>
           <label>
-            <p className="label-text">Types </p>
+            <p className="label-text">Type 1</p>
             <select
               className="select-submit"
               name="type"
@@ -77,24 +117,27 @@ function Submit() {
               onChange={handlePokemon}
             >
               <option value="">Choose the type</option>
-              <option value="Grass">Grass</option>
-              <option value="Fire">Fire</option>
-              <option value="Water">Water</option>
-              <option value="Bug">Bug</option>
-              <option value="Normal">Normal</option>
-              <option value="Flying">Flying</option>
-              <option value="Poison">Poison</option>
-              <option value="Electric">Electric</option>
-              <option value="Ground">Ground</option>
-              <option value="Psychic">Psychic</option>
-              <option value="Fighting">Fighting</option>
-              <option value="Rock">Rock</option>
-              <option value="Ghost">Ghost</option>
-              <option value="Ice">Ice</option>
-              <option value="Dragon">Dragon</option>
-              <option value="Steel">Steel</option>
-              <option value="Dark">Dark</option>
-              <option value="Fairy">Fairy</option>
+              {types.map((type) => (
+                <option key={type.id} value={type.id}>
+                  {type.type}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <p className="label-text">Type 2</p>
+            <select
+              className="select-submit"
+              name="type2"
+              value={pokemon.type2}
+              onChange={handlePokemon}
+            >
+              <option value="">Choose the type</option>
+              {types.map((type) => (
+                <option key={type.id} value={type.id}>
+                  {type.type}
+                </option>
+              ))}
             </select>
           </label>
           <button className="submit-button" type="submit">
@@ -102,6 +145,7 @@ function Submit() {
           </button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 }

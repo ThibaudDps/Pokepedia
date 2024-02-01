@@ -16,7 +16,6 @@ function Administration() {
         <nav className="nav-menu">
           <Link to="/">Home</Link>
           <Link to="/administration/management">Management</Link>
-          <Link to="/administration/adminCard">AdminCard</Link>
         </nav>
       </div>
       <Outlet />

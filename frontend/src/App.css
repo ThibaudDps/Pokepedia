@@ -1,7 +1,3 @@
-.home {
-  text-align: center;
-}
-
 .flex-container {
   display: flex;
   min-height: 100vh;
@@ -9,30 +5,36 @@
   justify-content: space-between;
 }
 
-.scroll-button {
+button {
+  margin-top: 30px;
   width: 100px;
-  margin-top: 20px;
-  border: 1px solid rgb(10, 7, 7);
+  border: 2px solid rgb(10, 7, 7);
   border-radius: 5px;
   background-color: #e2e2e2;
   transition-duration: 0.4s;
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
 }
 
-.scroll-button:hover {
+button:hover {
   background-color: #ee1a1a;
   color: white;
 }
 
-.home-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-title {
+  font-size: 35px;
+  z-index: 100000;
+  margin: 100px 0 0px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .home-logo {
-    width: 200px;
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-logo {
+  z-index: 1;
+  width: 150px;
+  animation: App-logo-spin infinite 20s linear;
+  margin-top: -90px;
+  pointer-events: none;
 }
 
 .home-header {
@@ -40,6 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   font-size: calc(10px + 2vmin);
   color: white;
   text-shadow:

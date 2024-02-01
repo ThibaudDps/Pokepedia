@@ -1,14 +1,22 @@
-import { createContext, useState, useMemo } from "react";
+import { createContext, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 
 export const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
-  const [connected, setConnected] = useState("Not connected");
-
+function AuthProvider({ children }) {
+  const [connected, setConnected] = useState({ role: null });
+  const [idNewUser, setIdNewUser] = useState({ id: 0 });
+  const [infosUser, setInfosUser] = useState({ username: "" });
   const contextValue = useMemo(
-    () => ({ connected, setConnected }),
-    [connected, setConnected]
+    () => ({
+      connected,
+      setConnected,
+      infosUser,
+      setInfosUser,
+      idNewUser,
+      setIdNewUser,
+    }),
+    [connected, setConnected, infosUser, setInfosUser, idNewUser, setIdNewUser]
   );
 
   return (
@@ -19,3 +27,5 @@ export function AuthProvider({ children }) {
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default AuthProvider;
