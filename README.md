@@ -44,3 +44,12 @@ Optimisation pour une utilisation mobile.
 ## Backlog : 
 
 ![image](https://github.com/ThibaudDps/Pokepedia/assets/124290694/88613be0-6d80-4aff-a5c4-6a18ee7ffabc)
+
+
+## Installation : 
+
+- Définir un dossier d'installation
+- gh repo clone ThibaudDps/Pokepedia dans le terminal de votre IDE
+- npm i
+- npm run db:migrate
+- Enjoy!
