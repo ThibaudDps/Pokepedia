@@ -5,13 +5,13 @@ import { AuthContext } from "../../contexts/Auth";
 import Footer from "../../components/Footer/Footer";
 
 function Administration() {
-  const { connected } = useContext(AuthContext);
+  const { infosUser } = useContext(AuthContext);
 
-  if (connected.is_admin === 1) {
+  if (infosUser.is_admin === 1) {
     return (
       <>
         <div className="nav">
-          <nav className="nav-menu">
+          <nav className="nav-menu-admin">
             <Link to="/">Home</Link>
             <Link to="/administration/management">Management</Link>
           </nav>

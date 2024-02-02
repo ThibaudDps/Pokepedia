@@ -1,0 +1,33 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dashboard-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15rem;
+}
+
+.dashboard-title {
+  margin-top: 60px;
+  text-align: center;
+  animation-duration: 1s;
+  animation-name: animate-fade;
+  animation-delay: 0.4s;
+  animation-fill-mode: backwards;
+}
+
+.dashboard-profile {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid;
+  border-radius: 50%;
+  animation-duration: 0.7s;
+  animation-name: animate-fade;
+  animation-delay: 0.2s;
+  animation-fill-mode: backwards;
+}
