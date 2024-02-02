@@ -29,7 +29,7 @@ button:hover {
     -1px -1px #0000009a,
     3px -1px #0000009a,
     -1px 1px #0000009a;
-  z-index: 100000;
+  z-index: 10000;
   margin: 100px 0 0px 0;
 }
 

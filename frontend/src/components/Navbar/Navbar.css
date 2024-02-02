@@ -1,6 +1,6 @@
 .nav {
   background-color: #a52b2b;
-  z-index: 2;
+  z-index: 50000;
   top: -2px;
   position: fixed;
   border: 2px solid black;
@@ -90,4 +90,17 @@ ul {
   color: rgb(0, 128, 240);
   text-decoration: none;
   transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 720px) {
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .name-user {
+    display: none;
+  }
 }

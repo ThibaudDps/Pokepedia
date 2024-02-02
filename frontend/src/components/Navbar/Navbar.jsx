@@ -33,9 +33,6 @@ function NavBar() {
                 <li>
                   <NavLink to="/login">Login</NavLink>
                 </li>
-                <li>
-                  <NavLink to="/signup">SignUp</NavLink>
-                </li>
               </div>
             )}
             {infosUser.is_admin === 1 && (

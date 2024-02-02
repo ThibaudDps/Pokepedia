@@ -14,7 +14,7 @@
     42 round;
   border-width: 15px;
   border-style: solid;
-  width: 30em;
+  min-width: 35%;
   height: 20em;
   padding: 1rem;
   background-color: rgb(230, 230, 230);
