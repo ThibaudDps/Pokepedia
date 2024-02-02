@@ -43,7 +43,8 @@ Optimisation pour une utilisation mobile.
 
 ## Backlog : 
 
-![image](https://github.com/ThibaudDps/Pokepedia/assets/124290694/88613be0-6d80-4aff-a5c4-6a18ee7ffabc)
+![image](https://github.com/ThibaudDps/Pokepedia/assets/124290694/f64aa662-989f-48bd-8210-8b6aa8fd0e6b)
+
 
 
 ## Installation : 
