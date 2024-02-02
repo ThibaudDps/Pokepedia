@@ -35,6 +35,7 @@ create table trainer (
   Foreign Key (auth_id) REFERENCES auth(id)
 );
 
+
 INSERT INTO auth (id, mail, password, is_admin) VALUES
 ('1', 'admin@pkmn.com', 'pkmn', 1 ),
 ('2', 'trainer@pkmn.com', 'pkmn', 0);

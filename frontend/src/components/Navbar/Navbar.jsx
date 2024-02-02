@@ -54,17 +54,18 @@ function NavBar() {
                     Log Out
                   </button>
                 </li>
-                <li className="name-picture">
+                <div className="logon">
                   <p className="name-user">{infosUser.name}</p>
-
-                  <NavLink to="/profile">
-                    <img
-                      className="profile-logo"
-                      src={infosUser.picture}
-                      alt=""
-                    />
-                  </NavLink>
-                </li>
+                  <li className="name-picture">
+                    <NavLink to="/profile">
+                      <img
+                        className="profile-logo"
+                        src={infosUser.picture}
+                        alt="user"
+                      />
+                    </NavLink>
+                  </li>
+                </div>
               </div>
             )}
           </ul>

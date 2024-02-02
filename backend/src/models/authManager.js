@@ -23,21 +23,13 @@ class AuthManager extends AbstractManager {
 
   async readByEmail(mail) {
     const [rows] = await client.query(
-      `SELECT * FROM ${this.table} WHERE mail = ?`,
+      `SELECT auth.id, auth.mail, auth.password, auth.is_admin, trainer.name, trainer.picture
+       FROM ${this.table}
+       INNER JOIN trainer ON ${this.table}.id = trainer.auth_id
+       WHERE mail = ?`,
       [mail]
     );
     return rows[0];
-  }
-
-  async readTrainer(id) {
-    const [result] = await client.query(
-      `SELECT auth.id, auth.mail, auth.is_admin, trainer.name, trainer.picture
-       FROM ${this.table}
-       INNER JOIN trainer ON ${this.table}.id = trainer.auth_id
-       WHERE ${this.table}.id = ?`,
-      [id]
-    );
-    return result[0];
   }
 
   async readAll() {

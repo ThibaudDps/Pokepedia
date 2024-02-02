@@ -37,8 +37,8 @@ button:hover {
   margin-top: 10px;
   border: 2px solid;
   z-index: 2;
+  font-size: 14px;
   background-color: #fdfdfd;
-
   padding: 5px;
 }
 
