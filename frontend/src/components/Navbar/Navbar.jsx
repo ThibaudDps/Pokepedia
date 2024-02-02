@@ -33,9 +33,6 @@ function NavBar() {
                 <li>
                   <NavLink to="/login">Login</NavLink>
                 </li>
-                <li>
-                  <NavLink to="/signup">SignUp</NavLink>
-                </li>
               </div>
             )}
             {infosUser.is_admin === 1 && (
@@ -54,17 +51,18 @@ function NavBar() {
                     Log Out
                   </button>
                 </li>
-                <li className="name-picture">
+                <div className="logon">
                   <p className="name-user">{infosUser.name}</p>
-
-                  <NavLink to="/profile">
-                    <img
-                      className="profile-logo"
-                      src={infosUser.picture}
-                      alt=""
-                    />
-                  </NavLink>
-                </li>
+                  <li className="name-picture">
+                    <NavLink to="/profile">
+                      <img
+                        className="profile-logo"
+                        src={infosUser.picture}
+                        alt="user"
+                      />
+                    </NavLink>
+                  </li>
+                </div>
               </div>
             )}
           </ul>

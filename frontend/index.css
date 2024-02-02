@@ -2,6 +2,21 @@
   display: none;
 }
 
+.Toastify__toast-body {
+  font-family: "Pokemon GB";
+  text-align: center;
+  font-size: 12px;
+  color: #000000;
+}
+
+.Toastify__toast--success,
+.Toastify__toast--error {
+  border-image: url(https://luttje.github.io/css-pokemon-gameboy/styles/images/frame-hd.png)
+    42 round;
+  border-width: 15px;
+  border-style: solid;
+}
+
 body {
   margin: 0 auto;
   background-color: #a52b2b;

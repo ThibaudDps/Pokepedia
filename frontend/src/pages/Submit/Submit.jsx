@@ -16,13 +16,13 @@ const pokemonEntry = {
 
 const showToastMessage = () => {
   toast.success("The entry has been saved successfully", {
-    position: toast.POSITION.TOP_RIGHT,
+    position: toast.POSITION.BOTTOM_CENTER,
   });
 };
 
 const showToastErrorMessage = () => {
   toast.error("The entry was not saved !", {
-    position: toast.POSITION.TOP_RIGHT,
+    position: toast.POSITION.BOTTOM_CENTER,
   });
 };
 
@@ -53,10 +53,11 @@ function Submit() {
   const postPokemon = async (event) => {
     event.preventDefault();
     try {
+      const { type, type2, ...rest } = pokemon;
       const pokemonWithIds = {
-        ...pokemon,
-        type_id: pokemon.type,
-        type_id_2: pokemon.type2,
+        ...rest,
+        type_id: type,
+        type_id_2: type2 !== "" ? type2 : null,
       };
       await connexion.post("/pokemons", pokemonWithIds);
       showToastMessage();
@@ -132,7 +133,7 @@ function Submit() {
               value={pokemon.type2}
               onChange={handlePokemon}
             >
-              <option value="">Choose the type</option>
+              <option value="">Choose the type (optional)</option>
               {types.map((type) => (
                 <option key={type.id} value={type.id}>
                   {type.type}

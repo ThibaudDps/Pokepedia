@@ -1,7 +1,8 @@
 .nav {
   background-color: #a52b2b;
-  z-index: 2;
+  z-index: 50000;
   top: -2px;
+  left: -2px;
   position: fixed;
   border: 2px solid black;
   display: flex;
@@ -15,22 +16,13 @@
   display: flex;
 }
 
-.nav-menu {
-  margin-top: -5px;
+.logon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.nav-logo {
-  margin: 20px 0 0 0;
-}
-
-.profile-logo {
-  display: none;
-}
-
-.button-logout {
-  width: 150px;
-  border: none;
-  background-color: rgba(240, 248, 255, 0);
+.name-user {
   color: aliceblue;
   text-decoration: none;
   font-size: 12px;
@@ -45,6 +37,25 @@
     -1px 1px #0000009a;
 }
 
+.nav-menu {
+  margin-top: -5px;
+}
+
+.nav-logo {
+  margin: 20px 0 0 0;
+}
+
+.profile-logo {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.button-logout {
+  width: 150px;
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+}
+
 .nav-log {
   display: flex;
   flex-direction: row;
@@ -56,6 +67,23 @@ ul {
   align-items: center;
   list-style-type: none;
   padding: 0;
+}
+
+.nav-menu-admin,
+.nav-menu-admin a {
+  margin: 10px;
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 13px;
+  text-shadow:
+    3px 0 #0000009a,
+    -2px 0 #0000009a,
+    0 2px #0000009a,
+    0 -2px #0000009a,
+    2px 2px #0000009a,
+    -1px -1px #0000009a,
+    2px -1px #0000009a,
+    -1px 1px #0000009a;
 }
 
 .nav-menu a,
@@ -80,4 +108,17 @@ ul {
   color: rgb(0, 128, 240);
   text-decoration: none;
   transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 720px) {
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .name-user {
+    display: none;
+  }
 }

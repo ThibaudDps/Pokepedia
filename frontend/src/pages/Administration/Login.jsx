@@ -16,14 +16,14 @@ const showToastMessage = () => {
   toast.success(
     "Your connection information is correct, you will be redirected !",
     {
-      position: toast.POSITION.TOP_CENTER,
+      position: toast.POSITION.BOTTOM_CENTER,
     }
   );
 };
 
 const showToastErrorMessage = () => {
   toast.error("Your login information is not correct !", {
-    position: toast.POSITION.TOP_RIGHT,
+    position: toast.POSITION.BOTTOM_CENTER,
   });
 };
 

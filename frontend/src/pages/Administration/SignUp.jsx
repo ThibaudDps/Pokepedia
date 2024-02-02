@@ -38,7 +38,7 @@ function SignUp() {
     event.preventDefault();
     try {
       if (confirmPassword === userAuth.password) {
-        const response = await connexion.post(`/auth`, userAuth);
+        const response = await connexion.post(`/signup`, userAuth);
         if (response.status === 201) {
           showToastMessage();
           setTimeout(() => {
