@@ -11,6 +11,7 @@ import AllPkmns from "./pages/AllPkmns/AllPkmns";
 import AllTypes from "./pages/AllTypes/AllTypes";
 import PkmnPage from "./pages/PkmnPage/PkmnPage";
 import About from "./pages/About/About";
+import Profile from "./pages/Profile/Profile";
 import Submit from "./pages/Submit/Submit";
 import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Administration/Login";
@@ -74,6 +75,11 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+
+      {
+        path: "/profile",
+        element: <Profile />,
       },
 
       {

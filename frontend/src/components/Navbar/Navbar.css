@@ -2,6 +2,7 @@
   background-color: #a52b2b;
   z-index: 50000;
   top: -2px;
+  left: -2px;
   position: fixed;
   border: 2px solid black;
   display: flex;
